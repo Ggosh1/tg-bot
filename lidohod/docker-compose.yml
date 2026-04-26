@@ -1,0 +1,26 @@
+services:
+  frontend:
+    build: .
+    container_name: lidohod_frontend
+    command: ["./tg-front"]
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+
+  parser:
+    build: .
+    container_name: lidohod_parser
+    command: ["./tg-parser"]
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - frontend
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./data:/app/data

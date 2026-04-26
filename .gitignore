@@ -1,0 +1,24 @@
+.DS_Store
+.idea/
+**/.idea/
+
+# Secrets and local runtime state
+.env
+.env.*
+!.env.example
+**/data/
+*.db
+*.sqlite
+*.sqlite3
+*session*.json
+parser_ids.txt
+latest_ids.txt
+latest_chat_ids.txt
+**/latest_ids.txt
+**/latest_chat_ids.txt
+
+# Build artifacts
+bin/
+dist/
+tmp/
+*.log
